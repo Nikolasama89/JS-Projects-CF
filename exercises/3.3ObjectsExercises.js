@@ -6,11 +6,21 @@
  */
 
 
-const uppercaseKeys = (obj) => Object.keys(obj).reduce((acc, k) => {
-  acc[k.toUpperCase()] = obj[k]
-  return acc
-}, {})
+// const uppercaseKeys = (obj) => Object.keys(obj).reduce((acc, k) => {
+//   acc[k.toUpperCase()] = obj[k]
+//   return acc
+// }, {})
 
 const user = {name: "Nikos", age: 35, city: "Zagora"}
 
-console.log(uppercaseKeys(user))
+const changeObject = (obj, callback) =>
+  Object.keys(obj).reduce((acc, key) => {
+    acc[callback(key)] = obj[key]
+    return acc
+  }, {})
+
+const uppercaseKeys = (key) => key.toUpperCase()
+
+
+console.log(changeObject(user, uppercaseKeys))
+
