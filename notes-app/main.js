@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function(){
     let seconds = today.getSeconds();
 
     let outputDate = `${daysGR[day]} ,  ${today.getDate()} ${monthsGR[month]} ${year}`
-    let outputHour = `${hour} : ${minute} : ${seconds}`
+    let outputHour = `${hour}:${minute}:${seconds}`
     document.getElementById("dateTxt").innerHTML = `${outputDate} <br> ${outputHour}`
     
   }
