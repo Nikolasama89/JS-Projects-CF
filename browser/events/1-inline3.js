@@ -1,4 +1,4 @@
 const btn = document.getElementById("btn")
 btn.addEventListener("click", function() {
   alert("Hello World!!!")
-})  // useCapture
+}, false)  // useCapture no , (bubbling) false is default
