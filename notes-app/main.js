@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function(){
     let day = today.getDay();
     let year = today.getFullYear();
 
-    let hour = today.getHours() > 12 ? today.getHours() - 12 : today.getHours();
+    let hour = today.getHours();
     let minute = today.getMinutes();
     let seconds = today.getSeconds();
 
