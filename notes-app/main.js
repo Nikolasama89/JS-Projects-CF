@@ -6,24 +6,8 @@ let count = 0
 
 window.addEventListener("DOMContentLoaded", function(){
 
-  function printGRDate() {
-    const today = new Date();
-    const month = today.getMonth();
-    const day = today.getDay();
-    const year = today.getFullYear();
-
-    const hour = today.getHours();
-    const minute = today.getMinutes();
-    const seconds = today.getSeconds();
-
-    const outputDate = `${daysGR[day]} ,  ${today.getDate()} ${monthsGR[month]} ${year}`
-    const outputHour = `${(hour < 10) ? '0': ''}${hour}:${(minute < 10) ? '0': ''}${minute}:${(seconds < 10) ? '0': ''}${seconds}`
-    document.getElementById("dateTxt").innerHTML = `${outputDate} <br> ${outputHour}`
-    
-  }
-  this.setInterval(printGRDate, 1000)
   
-
+  this.setInterval(printGRDate, 1000)
 
   this.document.querySelector("#addNoteBtn").addEventListener("click", function(){
     onInsertHandler({ key: count + 1, note: document.querySelector("#inputNote").value.trim(), softDeleted: false })
@@ -35,6 +19,21 @@ window.addEventListener("DOMContentLoaded", function(){
     }
   })
 })
+
+function printGRDate() {
+  const today = new Date();
+  const month = today.getMonth();
+  const day = today.getDay();
+  const year = today.getFullYear();
+  const hour = today.getHours();
+  const minute = today.getMinutes();
+  const seconds = today.getSeconds();
+
+  const outputDate = `${daysGR[day]} ,  ${today.getDate()} ${monthsGR[month]} ${year}`
+  const outputHour = `${(hour < 10) ? '0': ''}${hour}:${(minute < 10) ? '0': ''}${minute}:${(seconds < 10) ? '0': ''}${seconds}`
+  document.getElementById("dateTxt").innerHTML = `${outputDate} <br> ${outputHour}`
+  
+}
 
 /**
  * Controller in MVC
