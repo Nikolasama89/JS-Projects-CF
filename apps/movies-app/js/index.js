@@ -71,6 +71,9 @@ const onShowMoreClicked = () => {
     document.getElementById("language").innerHTML = `Γλωσσα: ${movieData.Language}`;
     document.getElementById("rated").innerHTML = `Καταλληλότητα: ${movieData.Rated}`;
 
-    document.getElementById("extraInfo").classList.remove("hidden")
+    // document.getElementById("extraInfo").classList.remove("hidden")
+    // Toggles the extraInfo id when user press it 
+    let extraInfoElement = document.getElementById("extraInfo")
+    extraInfoElement.classList.toggle("hidden")
 }
 
