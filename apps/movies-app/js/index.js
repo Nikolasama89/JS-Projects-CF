@@ -41,9 +41,19 @@ const getMovie = async (title) => {
     });
     console.log("API Response: ", response.data)
     let data = response.data;
+    let moviePoster = response.data.Poster
       
-      document.getElementById("title").innerHTML = response.data.Title;
-      document.getElementById("year").innerHTML = `Έτος: ${response.data.Year}`
+    let movieImg = document.getElementById("image")
+    movieImg.src = moviePoster
+
+
+    document.getElementById("title").innerHTML = response.data.Title;
+    document.getElementById("year").innerHTML = `Έτος παραγωγής: ${response.data.Year}`
+    document.getElementById("runtime").innerHTML = `Διάρκεια: ${response.data.Runtime}`
+    document.getElementById("genre").innerHTML = `Είδος: ${response.data.Genre}`
+    document.getElementById("imdbRating").innerHTML = response.data.imdbRating
+
+    document.getElementById("movie").classList.remove("hidden")
 
     
   } catch (error) {
