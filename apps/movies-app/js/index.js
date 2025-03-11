@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 let movieData = {};
 
 const getMovie = async (title) => {
-  const apiKey = "b7c16c10"
+  // const apiKey = "b7c16c10"
   try {
     console.log("Searching for:", title)
-    let response = await axios.get(`https://www.omdbapi.com/?apikey=${apiKey}`, {
+    let response = await axios.get(`http://localhost:3000/movies?title=${title}`, {
       params : {
         t: title
       }
