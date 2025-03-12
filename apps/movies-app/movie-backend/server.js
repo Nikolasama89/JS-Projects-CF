@@ -10,8 +10,8 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 
-// Χρηση middleware σε περιπτωση που ειχαμε διαφορετικους σερβερ το frontend και το backend
-// app.use(cors());
+// Χρηση CORS ως middleware για να επιτρεπονται αιτηματα απο αλλα origins(ports)
+app.use(cors());
 
 // Route για την αναζητηση ταινίας με ΟΜDB API
 app.get("/movies", async(req, res) => {
